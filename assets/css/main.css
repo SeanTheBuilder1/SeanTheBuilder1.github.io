@@ -40,6 +40,7 @@ body{
     top: 0;
     background-color:#ccddff;
     width: 0;
+    transition: width ease .6s;
     overflow: hidden;
     display: grid;
     grid-template-rows: 61px 61px 61px 61px;
