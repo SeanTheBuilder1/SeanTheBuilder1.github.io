@@ -1,6 +1,14 @@
+open = false
 
 function foo(){
-    alert('I got clicked')
+    if(open){
+        document.getElementById("slidemenu").style.width= "0%"
+        open = false
+    }
+    else{
+        document.getElementById("slidemenu").style.width= "30%"
+        open = true
+    }
 }
 
 function bar(){

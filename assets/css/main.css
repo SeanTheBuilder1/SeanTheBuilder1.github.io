@@ -26,15 +26,15 @@ body{
 #globaldiv{
     margin: 0px;
     padding: 0px;
-    /*display: grid;
-    grid-template-columns: 4fr 0fr;*/
+    /* display: grid;
+    grid-template-rows: 4fr 0fr; */
     display: flex;
     flex-direction: row;
 }
 
 #slidemenu{
-    width: 50%;
-    background-color:#ffffff
+    background-color:#ffffff;
+    width: 0%;
 }
 
 #mainbox{
@@ -55,7 +55,7 @@ body{
 
 
 #content{
-    width: 80%;
+    width: 100%;
     height: 100%;
 }
 
