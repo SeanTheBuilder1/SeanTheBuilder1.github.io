@@ -23,16 +23,55 @@ body{
     background-color: #121212;
 }
 
+#globaldiv{
+    margin: 0px;
+    padding: 0px;
+    /*display: grid;
+    grid-template-columns: 4fr 0fr;*/
+    display: flex;
+    flex-direction: row;
+}
+
+#slidemenu{
+    width: 50%;
+    background-color:#ffffff
+}
+
+#mainbox{
+    min-height: 100vh;
+    overflow: hidden;
+    display: inline-block;
+    background-image: url("/assets/icon.png");
+    background-size: cover;
+    border-radius: 2%; 
+    padding: 4%;
+    color: green;
+    background-color: #2a2a2a;
+    width: 100%;
+    height: auto;  
+    /*overflow-wrap: break-word;*/
+}
+
+
+
+#content{
+    width: 80%;
+    height: 100%;
+}
+
+
+
 #bar{
     display: grid;
     grid-template-columns: 1fr 50fr 4fr;
-    position: fixed;
-    left: 0px;
+    position: sticky;
     top: 0px;
     width: 100%;
     height: 50px;
     background-color: #121232;
 }
+
+
 
 #btn1{
     width: 50px;
@@ -48,22 +87,5 @@ body{
     width: auto;
     height: 100%;
     background-color: #403012;
-}
-
-#mainbox{
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    min-height: 100vh;
-    overflow: hidden;
-    display: inline-block;
-    background-image: url("/assets/icon.png");
-    background-size: cover;
-    border-radius: 2%; 
-    padding: 4%;
-    color: green;
-    background-color: #2a2a2a;
-    width: 100%;
-    height: auto;  
-    /*overflow-wrap: break-word;*/
 }
 
