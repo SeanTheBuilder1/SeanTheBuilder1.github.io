@@ -1,5 +1,6 @@
 open = false
 slidemenu = document.getElementById("slidemenu")
+menuicon = document.getElementById("menuicon")
 var checkbox = document.querySelector("input[name=darkmode]"); 
 body = document.body
 
@@ -60,6 +61,15 @@ function foo(){
 function bar(){
     window.location.href = './index.html';
 }
+
+
+
+function spam() {
+  
+}
+
+
+//document.getElementById("menuicon").addEventListener("click", spam)
 
 document.getElementById("btn1").addEventListener("click", foo)
 //document.getElementById("btn2").addEventListener("click", bar)
