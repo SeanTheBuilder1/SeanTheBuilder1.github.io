@@ -20,10 +20,47 @@ menu, ol, ul { padding-left: 0; }
 img { display: block; max-width: 100%; }
 
 body{
-    font-family: Arial, Helvetica;
+    /*font-family: Arial, Helvetica;*/
     background-color: #121212;
     margin: 0px;
     text-align: justify;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out, width .6s ease;
+}
+
+:root {
+    --gray0: #f8f8f8;
+    --gray1: #dbe1e8;
+    --gray2: #b2becd;
+    --gray3: #6c7983;
+    --gray4: #454e56;
+    --gray5: #2a2e35;
+    --gray6: #12181b;
+    --blue: #0084a5;
+    --purple: #a82dd1;
+    --yellow: #fff565;
+}
+
+.light {
+    --bg: var(--gray0);
+    --bg-nav: linear-gradient(to right, var(--gray1), var(--gray3));
+    --bg-dropdown: var(--gray0);
+    --text: var(--gray6);
+    --border-color: var(--blue);
+    --bg-solar: var(--yellow);
+}
+  
+.dark {
+    --bg: var(--gray5);
+    --bg-nav: linear-gradient(to right, var(--gray5), var(--gray6));
+    --bg-dropdown: var(--gray6);
+    --text: var(--gray0);
+    --border-color: var(--purple);
+    --bg-solar: var(--blue);
 }
 
 #globaldiv{
@@ -33,19 +70,64 @@ body{
     grid-template-columns: 4fr 5fr;  */
     display: flex;
     flex-direction: row;
+    height: auto;
+    /*background-color: #99dddd;*/
+    backgroud-color: var(--bg-nav);
+}
+
+#stickycontainer{
+    height: 100%;
 }
 
 #slidemenu{
-    position: sticky;
+    position:sticky;
     top: 0;
-    background-color:#ccddff;
     width: 0;
+    height: 100vh;
     transition: width ease .6s;
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: 61px 61px 61px 61px;
-    /* margin-bottom:10px; */
+    /*background-color:#ccddff;*/
+    background-color: var(--bg-nav);
 }
+
+
+
+#stickymenu{
+    display: flex; 
+    align-items: stretch;
+    flex-direction: column;
+    box-sizing: border-box;
+    top: 0;
+    width: 100%;
+    height 100%;
+    position: sticky;
+    overflow: hidden;
+    border-radius: 10px;
+    justify-items: end;
+}
+
+
+#darkmodeslider{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    position: sticky;
+    top: 99%;
+    
+    /*background-color: rgba(0.0,1.0,0.2,1.0);    */
+}
+
+
+#darkslider{
+    display: block;
+    box-sizing: border-box;
+    top: 99%;
+    height: auto;
+    position: sticky;
+    overflow: hidden;
+    
+}
+
+
 
 #slidemenu a{
     text-decoration:none;
@@ -53,32 +135,46 @@ body{
 }
 
 
-
-
-
-
 .menubutton{
-    /* margin-top: 0px;*/
-    background-color: white;
+    color: var(--text);
+    width: 100%;
+    height: 4rem;
+    background-color: var(--bg-dropdown);
     display: block;
     text-align: center;
-    line-height: 60px;
+    line-height: 4rem;
     place-items: center;
-    padding: 0px;
-    border-radius: 6%;
+    margin: 1px;
+    border-radius: 0.7rem;
+}
+
+#mainbox.visible{
+    background-image: none
+}
+
+#content.visible{
+    background-image: url("../background.jpg")
+}
+
+#content{
+    background-image: none;
+    background-size: cover;
+    min-height: 100vh;
+    height: auto;
 }
 
 #mainbox{
-    min-height: 100vh;
+    position: relative
+    top: 50px
+    min-height: 1000vh;
     overflow: hidden;
     display: inline-block;
-    background-image: url("../icon.png");
+    background-image: none;
     background-size: cover;
-    border-bottom-left-radius: 2%;
-    border-bottom-right-radius: 2%;
+    border-radius: 2rem;
     padding: 4%;
-    color: green;
-    background-color: #2a2a2a;
+    /*color: white;*/
+    background-color: rgba(0.0, 0.2, 1.0, 0.3);
     width: 100%;
     height: auto;  
     /*overflow-wrap: break-word;*/
@@ -101,6 +197,7 @@ body{
     width: 100%;
     height: 50px;
     background-color: transparent;
+    
 }
 
 
@@ -108,17 +205,24 @@ body{
 #btn1{
     width: 50px;
     height: 50px;
-    background-color: #401212;
+    background-color: var(--border-color);
 }
 
 #middle{
     flex-grow: 1;
-    background-color: #121232;
+    background-color: var(--bg-solar);
 }
 
 #btn2{
-    width: 100px;
+    width: 50px;
     height: 50px;
     background-color: #403012;
+    background-color: var(--bg)
 }
 
+label.tog { /* (A1) DIMENSIONS */ display: block; width: 3rem; height: 1.5rem; /* (A2) COSMETICS */ border: 5px solid #cacaca; background: #cacaca; cursor: pointer; }
+
+/* (B) "INNER SWITCH" */ label.tog::before { /* (B1) DIMENSIONS */ content: ""; display: block; width: 50%; height: 100%; /* (B2) COSMETICS */ background: #fff; }
+
+/* (C) TOGGLE MECHANISM */ /* (C1) HIDE CHECKBOX */ input.tog { display: none; } /* (C2) CHANGE SWITCH POSITION */ input.tog:checked + label.tog::before { position: relative; left: 50%; } /* (C3) CHANGE COLOR */ input.tog:checked + label.tog { border: 5px solid #2285f5; background: #2285f5; }
+ 
