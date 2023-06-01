@@ -45,7 +45,7 @@ body{
     --purple: #a82dd1;
     --yellow: #fff565;
     --light-opaque: rgba(1.1, 0.2, 0.4, 0.5);
-    --dark-opaque: rgba(0.0, 0.2, 1.0, 0.3);
+    --dark-opaque: rgba(0.0, 0.2, 1.0, 0.4);
 }
 
 .light {
@@ -182,7 +182,7 @@ body{
     background-image: none;
     background-size: cover;
     border-radius: 2rem;
-    padding: 4%;
+    padding: 5%;
     /*color: white;*/
     background-color: var(--opaque);
     width: 100%;
